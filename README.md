@@ -25,6 +25,13 @@ Install modules:
 yarn or npm install
 ```
 
+**Run Bot**
+Create a `.env` file in the root of the folder and add `TOKEN=xxxxxx`
+
+``` 
+npm run start
+```
+
 ## Useful commands
 
 Switch branches:
@@ -40,11 +47,6 @@ git checkout -b <branch-name>
 Fix eslint errors:
 ```
 npm run lint
-```
-
-Run bot
-```
-npm run start
 ```
 
 # Authors
