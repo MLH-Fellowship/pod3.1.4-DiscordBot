@@ -1,11 +1,29 @@
-# Explorer Template
+# React Raccoon Bot
 
-This is a template to help you get started with your projects. Find out more information inside of the Fello Handbook.
+The Bot helps developers working collaborative on a project residing on GitHub repository by notifying them on Discord channel each time there is PRs, Reviews or Comments on that repo. It also sends motivation quotes at intervals.
 
-This template has a `main` and `staging` branch already setup. 
 
-- Code will only be merged into `main` once your Pod Leader has reviewed your code. 
-- During the week, you'll merge code into `staging`.
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+Make sure Node.js is running on your local machine
+
+### Setup
+
+~~~bash
+$ git clone https://github.com/MLH-Fellowship/pod3.1.4-DiscordBot.git
+$ cd pod3.1.4-DiscordBot
+$ git checkout -b <new-branch>
+~~~
+
+Install modules:
+
+```
+yarn or npm install
+```
 
 ## Useful commands
 
@@ -19,24 +37,22 @@ Make new branch and switch to it:
 git checkout -b <branch-name>
 ```
 
-I'd recommend using the GitHub CLI for reviewing Pull Requests, making Pull Requests and making Issues.
-
-Download it with Homebrew:
+Fix eslint errors:
 ```
-brew install gh
+npm run lint
 ```
 
-## Getting Started Information
+Run bot
+```
+npm run start
+```
 
-- Visit https://discord.com/developers/applications
-- Create Application with name React Raccoon Bot
-- OAuth2 tab -> scope: select bot | Bot Permissions: set all Text Permissions except Send TTS Messages
-- Copy bot url: https://discord.com/api/oauth2/authorize?client_id=870626780103442502&permissions=259846040640&scope=bot
-- Add a testing server to Discord for this purpose, since the bot needs to run in a Discord server we have permission. - Added Pod-3.1.4 Discord Server
-- React Raccoon Bot added to Pod-3.1.4 server
-- Added Package.json file
-- Add eslint for js lint error checks
-- Add npm run commands : `npm run start` to run bot and `npm run lint` to check js lint errors
-- Add .env file to add bot token
-- Add dotenv package to fetch .env content
-- Write basic bot login instructions
+# Authors
+
+!TBA
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
