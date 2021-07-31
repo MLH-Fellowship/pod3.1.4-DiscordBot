@@ -1,0 +1,29 @@
+{
+  "name": "discord_bot",
+  "version": "1.0.0",
+  "description": "A simple bot that helps you manage your GitHub projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "lint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MLH-Fellowship/pod3.1.4-DiscordBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MLH-Fellowship/pod3.1.4-DiscordBot/issues"
+  },
+  "homepage": "https://github.com/MLH-Fellowship/pod3.1.4-DiscordBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0"
+  }
+}
