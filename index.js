@@ -10,6 +10,7 @@ dotenv.config();
 const guiddId = '870629107992526880';
 const channelId = '870629108441309187';
 
+// Fetch motivational quote, randomize data and limit to one result
 async function getQuote() {
 	const res = await axios.get('https://type.fit/api/quotes');
 	const data = res.data[Math.floor(Math.random() * res.data.length)];
@@ -22,11 +23,12 @@ client.once('ready', () => {
 
 // client.login(process.env.TOKEN);
 
+// schedule time to send quote when it 10:00am, 3:00pm and 6:00pm
 schedule.scheduleJob({ hour: 10, minute: 00, dayOfWeek: 0 }, scheduleMessage());
 schedule.scheduleJob({ hour: 15, minute: 21, dayOfWeek: 0 }, scheduleMessage());
 schedule.scheduleJob({ hour: 18, minute: 00, dayOfWeek: 0 }, scheduleMessage());
 
-
+// Program to send message
 const scheduleMessage = async () => {
 	const quote = await getQuote();
 	client.login(process.env.TOKEN).then(() => {
