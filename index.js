@@ -17,27 +17,19 @@ async function getQuote() {
 	return `${data.text} - ${data.author}`;
 }
 
-client.once('ready', () => {
-	console.log('Ready!');
-});
-
-// client.login(process.env.TOKEN);
-
-// schedule time to send quote when it 10:00am, 3:00pm and 6:00pm
-schedule.scheduleJob({ hour: 10, minute: 00, dayOfWeek: 0 }, scheduleMessage());
-schedule.scheduleJob({ hour: 15, minute: 21, dayOfWeek: 0 }, scheduleMessage());
-schedule.scheduleJob({ hour: 18, minute: 00, dayOfWeek: 0 }, scheduleMessage());
+client.login(process.env.TOKEN);
 
 // Program to send message
 const scheduleMessage = async () => {
 	const quote = await getQuote();
 	client.login(process.env.TOKEN).then(() => {
-		const guild = client.guilds.get(guiddId);
-		if(guild && guild.channels.get(channelId)) {
-			guild.channels.get(channelId).send(quote).then(() => client.destroy());
-		}
-		else {
-			client.destroy();
-		}
+		const guild = client.guilds.cache.get(guiddId);
+		const channel = guild.channels.cache.get(channelId);
+		channel.send(quote);
 	});
 };
+
+// schedule time to send quote when it 10:00am, 3:00pm and 6:00pm
+schedule.scheduleJob({ hour: 10, minute: 00, dayOfWeek: 0 }, scheduleMessage);
+schedule.scheduleJob({ hour: 15, minute: 00, dayOfWeek: 0 }, scheduleMessage);
+schedule.scheduleJob({ hour: 18, minute: 37, dayOfWeek: 0 }, scheduleMessage);
