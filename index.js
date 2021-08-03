@@ -2,10 +2,12 @@
 const Discord = require('discord.js');
 const { default: axios } = require('axios');
 const schedule = require('node-schedule');
+const { Octokit } = require('@octokit/rest');
 const client = new Discord.Client();
 
 const dotenv = require('dotenv');
 dotenv.config();
+
 
 const guiddId = '870629107992526880';
 const channelId = '870629108441309187';
@@ -16,6 +18,23 @@ async function getQuote() {
 	const data = res.data[Math.floor(Math.random() * res.data.length)];
 	return `${data.text} - ${data.author}`;
 }
+
+const octokit = new Octokit({ auth: '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' });
+
+const notificationResults = async () => {
+	const { data: user } = await octokit.request('GET /user');
+
+	console.log(`authenticated as ${user.login}`);
+
+	const notifiy = await octokit.request('GET /repos/{owner}/{repo}/notifications', {
+		owner: 'MLH-Fellowship',
+		repo: 'pod3.1.4-DiscordBot',
+	});
+
+	console.log(notifiy.data);
+};
+
+notificationResults();
 
 client.login(process.env.TOKEN);
 
