@@ -104,6 +104,14 @@ app.post('/github', (req, res) => {
 	NotifyChannel();
 });
 
+client.on('message', message => {
+	const prefixes = ['!', '?', '/'];
+	const prefix = prefixes.find(p => message.content.startsWith(p));
+	if (!prefix) return;
+
+	message.reply('I am here!');
+});
+
 app.listen(port, () =>
 	console.log(`Example app listening at http://localhost:${port}`),
 );
