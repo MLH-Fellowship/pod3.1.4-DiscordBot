@@ -44,7 +44,7 @@ const scheduleMessage = async () => {
 const discordMsg = (sender, action, type, url, title = '', body = '') => {
 	const embed = new MessageEmbed()
 		.setTitle(`${sender.login} ${action} ${type} ${title}`)
-		.setURL(url)
+		.setURL(url.replace('api.', '').replace('/repos', ''))
 		.setThumbnail(sender.avatar_url)
 		.setDescription(`${body}`);
 	return embed;
