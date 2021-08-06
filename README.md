@@ -1,16 +1,15 @@
 # React Raccoon Bot
 
-The bot helps developers that are working collaboratively on a project residing on GitHub repository by notifying them on Discord channel each time there is PRs, Reviews or Comments on that repo. It also sends motivation quotes at intervals (Morning, Afternoon and Evening).
+The bot helps developers that are working collaboratively on a project residing on GitHub repository by notifying them on Discord channel each time there is PRs, Reviews or Comments on that repo. It also sends motivation quotes at intervals.
+
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-- Make sure [Node.js](https://nodejs.org/en/download/) is running on your local machine.
-- A registered [Discord](https://discord.com/) account
-
+Make sure Node.js is running on your local machine
 
 ### Setup
 
@@ -26,7 +25,7 @@ Install modules:
 yarn or npm install
 ```
 
-**Run Bot:**
+**Run Bot**
 Create a `.env` file in the root of the folder and add `TOKEN=xxxxxx`
 
 ``` 
@@ -37,6 +36,11 @@ npm run start
 
 Switch branches:
 ```
+git checkout <branch-name>
+```
+
+Make new branch and switch to it:
+```
 git checkout -b <branch-name>
 ```
 
@@ -45,62 +49,9 @@ Fix eslint errors:
 npm run lint
 ```
 
-Log in to server
-```
-ssh root@172.xxx.xxx.xxx
-```
-
-Run the program 
-```
-pm2 --name DiscordBot start npm -- start
-```
-
-List Running Process
-```
-pm2 ps
-```
-
-Stop Process - 0 is the index
-```
-pm2 delete 0 
-```
-
-Check logs
-```
-pm2 logs
-```
-
-Check background processes
-```
-ps
-```
-
-kill background processes
-```
-sudo kill -9 3348
-```
-
-start ngrok in background
-```
-./ngrok http 3000 -log=stdout > ngrok.log &
-```
-
-get the public url from the ngrok.log
-```
-cat ngrok.log
-```
-
 # Authors
 
-[Uduak Essien](https://github.com/acushlakoncept): Created files for basic bot setup, worked on connectivity with the React Raccoon Bot from Github to Discord, and tested the bot.
-
-[Ajiboye Adedotun](https://github.com/Youngprinnce): Integrated motivational quote API, worked on testing and improved README.
-
-[Sebastian Holguin](https://github.com/sebastian-holguin): Updated Github information and setup of the Discord bot and tested with open/closed issues on Github.
-
-## Show your support
-
-Give a ⭐️ if you like this project!
+!TBA
 
 ## 🤝 Contributing
 
