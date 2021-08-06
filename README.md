@@ -8,8 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Make sure [Node.js](https://nodejs.org/en/download/) is running on your local machine.
-A registered [Discord](https://discord.com/) account
+- Make sure [Node.js](https://nodejs.org/en/download/) is running on your local machine.
+- A registered [Discord](https://discord.com/) account
 
 
 ### Setup
