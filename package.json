@@ -4,7 +4,7 @@
   "description": "A simple bot that helps you manage your GitHub projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node .",
     "lint": "eslint . --fix"
   },
@@ -27,6 +27,7 @@
     "node-schedule": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.31.0"
+    "eslint": "^7.31.0",
+    "jest": "^27.0.6"
   }
 }
