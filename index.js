@@ -3,7 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const { Client, MessageEmbed } = require('discord.js');
 const schedule = require('node-schedule');
-const { default: axios } = require('axios');
+const { getQuote } = require('./getQuote');
 
 const client = new Client();
 
@@ -26,13 +26,6 @@ app.get('/', (req, res) => res.send(`
 
 const guiddId = '870629107992526880';
 const channelId = '870629108441309187';
-
-// Fetch motivational quote, randomize data and limit to one result
-const getQuote = async () => {
-	const res = await axios.get('https://type.fit/api/quotes');
-	const data = res.data[Math.floor(Math.random() * res.data.length)];
-	return `${data.text} - ${data.author}`;
-};
 
 const scheduleMessage = async () => {
 	const quote = await getQuote();
