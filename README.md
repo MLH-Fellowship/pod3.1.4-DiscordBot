@@ -107,6 +107,11 @@ sudo kill -9 3348
 
 ![webhook](webhook.jpg)
 
+# Testing
+
+```
+npm test
+```
 # Authors
 
 👤 **Uduak Essien**
